@@ -1,0 +1,30 @@
+<form [formGroup]="formulario" novalidate (ngSubmit)="salvar()">
+
+    <h1>CRIANDO NOVO TODO</h1>
+    <div class="forms">
+        <mat-form-field class="dataFinaliazar" appearance="fill">
+            <mat-label>Input disabled</mat-label>
+            <input  formControlName="dataParaFinalizar" matInput [matDatepicker]="dp3">
+               
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+        <div class="form">
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Título</mat-label>
+                <input formControlName="titulo" matInput placeholder="Exemplo. Estudar">
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Descrição</mat-label>
+                <input formControlName="descricao" matInput
+                    placeholder="Exemplo. Estudar Matematica">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="buttons">
+        <button type="submit" mat-stroked-button color="primary">SALVAR</button>
+        <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+</form>
